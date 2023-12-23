@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "typeRoots": ["index.d.ts"],
+    "outDir": "dist",
+    "sourceMap": true,
+    "target": "esnext",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitAny": true,
+    "strict": true,
+    "skipLibCheck": true
+  },
+  "include": ["./*.js", "src/**/*.ts", "index.d.ts"]
+}
