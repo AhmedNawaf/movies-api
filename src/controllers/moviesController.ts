@@ -122,7 +122,6 @@ export async function getReviews(req: Request, res: Response) {
     },
   });
 
-  if (!reviews) return res.status(404).send();
   res.json({
     success: true,
     data: reviews,
@@ -171,5 +170,6 @@ export async function addReview(req: Request, res: Response) {
 
   res.status(201).json({
     success: true,
+    message: 'Create Success',
   });
 }

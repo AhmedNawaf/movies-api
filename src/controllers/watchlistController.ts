@@ -45,7 +45,22 @@ export async function toggleWatchList(req: Request, res: Response) {
 export async function getWatchList(req: Request, res: Response) {
   const user = await db.user.findUnique({
     where: { id: req.userId },
-    include: { watchList: true },
+    include: {
+      watchList: {
+        include: {
+          user: {
+            select: {
+              name: true,
+            },
+          },
+          movie: {
+            select: {
+              name: true,
+            },
+          },
+        },
+      },
+    },
   });
   if (!user) return res.json({ message: 'User not found' });
   res.json({

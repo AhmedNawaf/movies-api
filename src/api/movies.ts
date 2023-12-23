@@ -10,7 +10,7 @@ router.put('/:id', [check, adminCheck], controller.updateMovie);
 router.delete('/:id', [check, adminCheck], controller.deleteMovie);
 
 router.get('/', check, controller.getMovies);
-router.get('/', check, controller.findMovieById);
+router.get('/:id', check, controller.findMovieById);
 
 router.post('/:id/reviews', check, controller.addReview);
 router.get('/:id/reviews', controller.getReviews);
